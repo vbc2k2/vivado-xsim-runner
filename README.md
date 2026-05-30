@@ -14,7 +14,43 @@ If the tools are not found, start VS Code from a Vivado-enabled shell or add Viv
 
 ## Where To Put It
 
-For a new project, clone this repository and open the cloned folder in VS Code.
+There are two supported layouts.
+
+### Global Install
+
+Use this if you want to install the runner once and use it from any HDL workspace.
+
+```powershell
+git clone <repo-url>
+cd vivado-xsim-runner
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+This installs the runner here:
+
+```text
+%USERPROFILE%\.xsim-runner\run_xsim.ps1
+```
+
+For VS Code tasks, copy `examples/global-tasks.json` to your VS Code User Tasks file.
+
+For Code Runner's run button, add this to your VS Code user `settings.json`:
+
+```json
+{
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMapByFileExtension": {
+    ".sv": "powershell -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\.xsim-runner\\run_xsim.ps1\" -FilePath \"$fullFileName\" -WorkspaceRoot \"$workspaceRoot\"",
+    ".v": "powershell -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\.xsim-runner\\run_xsim.ps1\" -FilePath \"$fullFileName\" -WorkspaceRoot \"$workspaceRoot\""
+  }
+}
+```
+
+After that, open any Verilog/SystemVerilog workspace and use the same VS Code run button.
+
+### Workspace Install
+
+Use this if you want the runner checked into a specific HDL project.
 
 For an existing HDL project, copy this repository's `scripts` folder into the root of that project:
 
