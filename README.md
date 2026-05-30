@@ -12,6 +12,31 @@ The script compiles with `xvlog`, elaborates with `xelab`, and runs with `xsim`.
 
 If the tools are not found, start VS Code from a Vivado-enabled shell or add Vivado's `bin` directory to `PATH`.
 
+## Where To Put It
+
+For a new project, clone this repository and open the cloned folder in VS Code.
+
+For an existing HDL project, copy this repository's `scripts` folder into the root of that project:
+
+```text
+your-hdl-project/
+  scripts/
+    run_xsim.ps1
+  design_or_testbench.sv
+```
+
+The VS Code examples expect the script at:
+
+```text
+${workspaceFolder}\scripts\run_xsim.ps1
+```
+
+That means if your workspace is `D:\verilog\my_project`, the script should be here:
+
+```text
+D:\verilog\my_project\scripts\run_xsim.ps1
+```
+
 ## Terminal Usage
 
 ```powershell
