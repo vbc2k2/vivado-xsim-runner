@@ -1,0 +1,7 @@
+{
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMapByFileExtension": {
+    ".sv": "powershell -ExecutionPolicy Bypass -File \"$workspaceRoot\\scripts\\run_xsim.ps1\" -FilePath \"$fullFileName\" -WorkspaceRoot \"$workspaceRoot\"",
+    ".v": "powershell -ExecutionPolicy Bypass -File \"$workspaceRoot\\scripts\\run_xsim.ps1\" -FilePath \"$fullFileName\" -WorkspaceRoot \"$workspaceRoot\""
+  }
+}

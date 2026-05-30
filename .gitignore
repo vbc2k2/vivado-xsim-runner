@@ -1,0 +1,14 @@
+.xsim/
+.Xil/
+xsim.dir/
+
+*.jou
+*.log
+*.pb
+*.wdb
+*.vcd
+*.out
+
+webtalk*
+*.backup.jou
+*.backup.log
